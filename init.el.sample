@@ -1,0 +1,27 @@
+;; Copyright 2024 haghir
+;;
+;; This program is free software: you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+;;
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+(let ((config-el (expand-file-name "config.el" user-emacs-directory)))
+  (when (file-exists-p config-el)
+    (load-file config-el)))
+
+(let ((packages-el (expand-file-name "packages.el" user-emacs-directory)))
+  (when (file-exists-p packages-el)
+    (load-file packages-el)))
+
+(when (display-graphic-p)
+  (set-face-attribute 'default nil :height 180)
+  (set-frame-font "-*-Courier New-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1"))
+
