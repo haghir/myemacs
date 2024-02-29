@@ -17,6 +17,13 @@
 ;; Global Settings.
 ;; ============================================================================
 
+;; Package
+(package-initialize)
+(setq package-archives
+  '(("gnu" . "http://elpa.gnu.org/packages/")
+    ("melpa" . "http://melpa.org/packages/")
+    ("org" . "http://orgmode.org/elpa/")))
+
 ;; .emacs.d
 (when load-file-name
   (setq user-emacs-directory
@@ -69,19 +76,6 @@
 (global-set-key (kbd "<C-down>") 'enlarge-window)
 (global-set-key (kbd "<C-left>") 'shrink-window-horizontally)
 (global-set-key (kbd "<C-right>") 'enlarge-window-horizontally)
-
-;; Search
-(global-set-key (kbd "C-c s") 'replace-string)
-(global-set-key (kbd "C-c r") 'vr/replace)
-(global-set-key (kbd "C-c q") 'vr/query-replace)
-(global-set-key (kbd "C-M-r") 'vr/isearch-backward)
-(global-set-key (kbd "C-M-s") 'vr/isearch-forward)
-
-;; gtags
-(global-set-key (kbd "M-t") 'gtags-find-tag)
-(global-set-key (kbd "M-r") 'gtags-find-rtag)
-(global-set-key (kbd "M-s") 'gtags-find-symbol)
-(global-set-key (kbd "M-p") 'gtags-pop-stack)
 
 ;; ============================================================================
 ;; My commands

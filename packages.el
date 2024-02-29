@@ -14,7 +14,9 @@
 ;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ;; async
-(use-package async :ensure t :config (dired-async-mode 1))
+(use-package async :ensure t
+  :hook
+    (emacs-startup . dired-async-mode))
 
 ;; Bison Mode
 (use-package bison-mode :ensure t
@@ -60,10 +62,19 @@
       (setq c-basic-offset 4))))
 
 ;; gtags (requires GNU Global)
-(use-package gtags-mode :ensure t)
+(use-package gtags-mode :ensure t
+  :hook
+    (emacs-startup . gtags-mode)
+  :bind(
+    ("M-t" . gtags-find-tag)
+    ("M-r" . gtags-find-rtag)
+    ("M-s" . gtags-find-symbol)
+    ("M-p" . gtags-pop-stack)))
 
 ;; helm
-(use-package helm :ensure t :config (helm-mode 1))
+(use-package helm :ensure t
+  :hook
+    (emacs-startup . helm-mode))
 
 ;; JS2 Mode
 (use-package js2-mode :ensure t
@@ -173,6 +184,17 @@
       (setq typescript-indent-level 4)
       (setq tab-width 4))))
 
+;; Visual Regexp
+(use-package visual-regexp :ensure t
+  :config
+    (setq vr/engine 'pcre2el)
+  :bind (
+    ("C-c s" . replace-string)
+    ("C-c r" . vr/replace)
+    ("C-c q" . vr/query-replace)
+    ("C-M-r" . vr/isearch-backward)
+    ("C-M-s" . vr/isearch-forward)))
+
 ;; Web Mode
 (use-package web-mode :ensure t
   :mode (
@@ -207,6 +229,6 @@
 
 ;; yasnippet
 (use-package yasnippet :ensure t
-  :config (lambda ()
-    (add-to-list 'yas-snippet-dirs (locate-user-emacs-file "snippets"))
-    (yas-global-mode 1)))
+  :hook
+    (emacs-startup . yas-global-mode))
+(use-package yasnippet-snippets :ensure t)
