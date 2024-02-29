@@ -20,9 +20,9 @@
 ;; Package
 (package-initialize)
 (setq package-archives
-  '(("gnu" . "http://elpa.gnu.org/packages/")
-    ("melpa" . "http://melpa.org/packages/")
-    ("org" . "http://orgmode.org/elpa/")))
+  '(("gnu" . "https://elpa.gnu.org/packages/")
+    ("melpa" . "https://melpa.org/packages/")
+    ("org" . "https://orgmode.org/elpa/")))
 
 ;; .emacs.d
 (when load-file-name
