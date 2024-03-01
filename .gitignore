@@ -1,5 +1,6 @@
 *
 !/.git*
+!/site-lisp/
 !/init.el.sample
 !/config.el
 !/packages.el

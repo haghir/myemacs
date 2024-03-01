@@ -62,10 +62,12 @@
       (setq c-basic-offset 4))))
 
 ;; gtags (requires GNU Global)
-(use-package gtags-mode :ensure t
-  :hook
-    (emacs-startup . gtags-mode)
-  :bind(
+(use-package gtags-mode
+  :load-path
+    "site-lisp/gtags/"
+  :init
+    (require 'gtags)
+  :bind (
     ("M-t" . gtags-find-tag)
     ("M-r" . gtags-find-rtag)
     ("M-s" . gtags-find-symbol)
