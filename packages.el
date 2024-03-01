@@ -59,6 +59,12 @@
       (setq tab-width 4)
       (setq c-basic-offset 4))))
 
+;; direx
+(use-package direx :ensure t
+  :hook
+    (direx:jump-to-directory . (lambda ()
+      (setq indent-tabs-mode nil))))
+
 ;; gtags (requires GNU Global)
 (use-package gtags-mode
   :load-path

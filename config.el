@@ -93,7 +93,7 @@
     (enlarge-window (- h (window-total-height)))
     (split-window-horizontally)
     (shrink-window-horizontally (- (window-total-width) w))
-    (dired ".")
+    (direx:jump-to-directory)
     (other-window 2)
     (eshell)
     (other-window -1)))
