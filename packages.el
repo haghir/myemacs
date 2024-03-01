@@ -14,9 +14,7 @@
 ;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ;; async
-(use-package async :ensure t
-  :hook
-    (emacs-startup . dired-async-mode))
+(use-package async :ensure t :config (dired-async-mode 1))
 
 ;; Bison Mode
 (use-package bison-mode :ensure t
@@ -74,9 +72,7 @@
     ("M-p" . gtags-pop-stack)))
 
 ;; helm
-(use-package helm :ensure t
-  :hook
-    (emacs-startup . helm-mode))
+(use-package helm :ensure t :config (helm-mode 1))
 
 ;; JS2 Mode
 (use-package js2-mode :ensure t
@@ -234,7 +230,5 @@
       (setq tab-width 2))))
 
 ;; yasnippet
-(use-package yasnippet :ensure t
-  :hook
-    (emacs-startup . yas-global-mode))
+(use-package yasnippet :ensure t :config (yas-global-mode 1))
 (use-package yasnippet-snippets :ensure t)
