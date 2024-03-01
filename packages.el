@@ -113,9 +113,11 @@
       (setq indent-line-function 'insert-tab)))))
 
 ;; mozc
-;;(add-to-list 'load-path (locate-user-emacs-file "repos/mozc"))
-;;(setq default-input-method "japanese-mozc")
-;;(require 'mozc)
+(use-package mozc :ensure t
+  :requires
+    mozc
+  :config
+    (setq default-input-method "japanese-mozc"))
 
 ;; pcre2el
 (use-package pcre2el :ensure t)
