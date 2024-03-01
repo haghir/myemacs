@@ -22,7 +22,8 @@
 (setq package-archives
   '(("gnu" . "https://elpa.gnu.org/packages/")
     ("melpa" . "https://melpa.org/packages/")
-    ("org" . "https://orgmode.org/elpa/")))
+    ("org" . "https://orgmode.org/elpa/")
+    ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
 
 ;; .emacs.d
 (when load-file-name

@@ -145,6 +145,8 @@
 
 ;; Rust Mode
 (use-package rust-mode :ensure t
+  :pin
+    nongnu
   :mode
     "\\.rs\\'"
   :hook
