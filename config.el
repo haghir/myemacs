@@ -20,10 +20,10 @@
 ;; Package
 (package-initialize)
 (setq package-archives
-  '(("gnu" . "https://elpa.gnu.org/packages/")
-    ("melpa" . "https://melpa.org/packages/")
-    ("org" . "https://orgmode.org/elpa/")
-    ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
+  '(("gnu"    . "https://elpa.gnu.org/packages/")
+    ("nongnu" . "https://elpa.nongnu.org/nongnu/")
+    ("melpa"  . "https://melpa.org/packages/")
+    ("org"    . "https://orgmode.org/elpa/")))
 
 ;; .emacs.d
 (when load-file-name
@@ -60,14 +60,16 @@
 (set-face-background 'whitespace-line nil)
 
 ;; Size.
-(when window-system (set-frame-size (selected-frame) 80 25))
+(when window-system (set-frame-size (selected-frame) 80 35))
 
 ;; ============================================================================
 ;; Packages
 ;; ============================================================================
 
 ;; async
-(use-package async :ensure t :config (dired-async-mode 1))
+(use-package async :ensure t
+  :config
+    (dired-async-mode 1))
 
 ;; Bison Mode
 (use-package bison-mode :ensure t
@@ -115,7 +117,7 @@
 ;; direx
 (use-package direx :ensure t
   :hook
-    (direx:jump-to-directory . (lambda ()
+    (direx:direx-mode . (lambda ()
       (setq indent-tabs-mode nil))))
 
 ;; gtags (requires GNU Global)
@@ -131,7 +133,9 @@
     ("M-p" . gtags-pop-stack)))
 
 ;; helm
-(use-package helm :ensure t :config (helm-mode 1))
+(use-package helm :ensure t
+  :config
+    (helm-mode 1))
 
 ;; JS2 Mode
 (use-package js2-mode :ensure t
@@ -147,7 +151,12 @@
       (setq tab-width 4))))
 
 ;; Lisp Mode
-(use-package lisp-mode :config (setq indent-tabs-mode nil))
+(use-package lisp-mode
+  :hook (
+    (lisp-mode . (lambda ()
+      (setq indent-tabs-mode nil)))
+    (emacs-lisp-mode . (lambda ()
+      (setq indent-tabs-mode nil)))))
 
 ;; Markdown Mode
 (use-package markdown-mode :ensure t
@@ -213,7 +222,9 @@
       (setq rust-indent-offset 4))))
 
 ;; Scala Mode
-(use-package scala-mode :ensure t :mode "\\.scala\\'")
+(use-package scala-mode :ensure t
+  :mode
+    "\\.scala\\'")
 
 ;; Shell script
 (setq sh-basic-offset 8)
