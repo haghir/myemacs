@@ -18,6 +18,5 @@
     (load-file config-el)))
 
 (when (display-graphic-p)
-  (set-face-attribute 'default nil :height 180)
-  (set-frame-font "-*-Courier New-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1"))
+  (set-face-attribute 'default nil :font "Courier New" :height 180))
 
