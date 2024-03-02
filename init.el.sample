@@ -17,10 +17,6 @@
   (when (file-exists-p config-el)
     (load-file config-el)))
 
-(let ((packages-el (expand-file-name "packages.el" user-emacs-directory)))
-  (when (file-exists-p packages-el)
-    (load-file packages-el)))
-
 (when (display-graphic-p)
   (set-face-attribute 'default nil :height 180)
   (set-frame-font "-*-Courier New-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1"))
