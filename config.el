@@ -121,7 +121,7 @@
       (setq indent-tabs-mode nil))))
 
 ;; gtags (requires GNU Global)
-(when (file-exists-p gtags-load-path)
+(when (file-exists-p (expand-file-name "gtags.el" gtags-load-path))
   (use-package gtags-mode
     :load-path
       gtags-load-path
