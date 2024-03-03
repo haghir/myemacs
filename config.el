@@ -121,16 +121,17 @@
       (setq indent-tabs-mode nil))))
 
 ;; gtags (requires GNU Global)
-(use-package gtags-mode
-  :load-path
-    "site-lisp/gtags/"
-  :init
-    (require 'gtags)
-  :bind (
-    ("M-t" . gtags-find-tag)
-    ("M-r" . gtags-find-rtag)
-    ("M-s" . gtags-find-symbol)
-    ("M-p" . gtags-pop-stack)))
+(when (file-exists-p gtags-load-path)
+  (use-package gtags-mode
+    :load-path
+      gtags-load-path
+    :init
+      (require 'gtags)
+    :bind (
+      ("M-t" . gtags-find-tag)
+      ("M-r" . gtags-find-rtag)
+      ("M-s" . gtags-find-symbol)
+      ("M-p" . gtags-pop-stack))))
 
 ;; helm
 (use-package helm :ensure t

@@ -13,10 +13,15 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+;; Path to the directory containing gtags.el
+(defconst gtags-load-path "/path/to/gtags")
+
+;; config.el
 (let ((config-el (expand-file-name "config.el" user-emacs-directory)))
   (when (file-exists-p config-el)
     (load-file config-el)))
 
+;; Font settings for GUI
 (when (display-graphic-p)
   (set-face-attribute 'default nil :font "Courier New" :height 180))
 
