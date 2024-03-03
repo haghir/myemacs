@@ -13,14 +13,6 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-;; Path to the directory containing gtags.el
-(defconst gtags-load-path "/path/to/gtags")
-
-;; config.el
-(let ((config-el (expand-file-name "config.el" user-emacs-directory)))
-  (when (file-exists-p config-el)
-    (load-file config-el)))
-
 ;; GUI Settings
 (when (display-graphic-p)
   ;; Theme
@@ -32,3 +24,11 @@
 
 ;; Frame Size
 (when window-system (set-frame-size (selected-frame) 80 35))
+
+;; Path to the directory containing gtags.el
+(defconst gtags-load-path "/path/to/gtags")
+
+;; config.el
+(let ((config-el (expand-file-name "config.el" user-emacs-directory)))
+  (when (file-exists-p config-el)
+    (load-file config-el)))
