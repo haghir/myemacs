@@ -45,22 +45,12 @@
 (setq-default indent-tabs-mode t)
 (setq-default tab-width 8)
 
-;; GUI
-(when (display-graphic-p)
-  ;; Theme
-  (load-theme 'manoj-dark t)
-  (set-face-background 'default "#1e1e1e")
-  (set-face-foreground 'default "#dcdcdc"))
-
 ;; Whitespace.
 (global-whitespace-mode t)
 (set-face-background 'whitespace-tab nil)
 (set-face-background 'whitespace-space nil)
 (set-face-foreground 'whitespace-line nil)
 (set-face-background 'whitespace-line nil)
-
-;; Size.
-(when window-system (set-frame-size (selected-frame) 80 35))
 
 ;; ============================================================================
 ;; Packages

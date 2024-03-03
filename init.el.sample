@@ -21,7 +21,14 @@
   (when (file-exists-p config-el)
     (load-file config-el)))
 
-;; Font settings for GUI
+;; GUI Settings
 (when (display-graphic-p)
+  ;; Theme
+  (load-theme 'manoj-dark t)
+  (set-face-background 'default "#1e1e1e")
+  (set-face-foreground 'default "#dcdcdc")
+  ;; Font
   (set-face-attribute 'default nil :font "Courier New" :height 180))
 
+;; Frame Size
+(when window-system (set-frame-size (selected-frame) 80 35))
