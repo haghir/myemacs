@@ -293,23 +293,7 @@
 ;; yasnippet
 (use-package yasnippet :ensure t :config (yas-global-mode 1))
 (use-package yasnippet-snippets :ensure t)
-
-;; ============================================================================
-;; Key Bindings
-;; ============================================================================
-
-;; General
-(global-set-key (kbd "C-`") 'toggle-input-method)
-(global-set-key (kbd "M-`") 'toggle-input-method)
-(global-set-key (kbd "C-t") 'toggle-truncate-lines)
-(global-set-key (kbd "C-M-!") 'eshell)
-
-;; Window
-(global-set-key (kbd "<C-up>") 'shrink-window)
-(global-set-key (kbd "<C-down>") 'enlarge-window)
-(global-set-key (kbd "<C-left>") 'shrink-window-horizontally)
-(global-set-key (kbd "<C-right>") 'enlarge-window-horizontally)
-
+
 ;; ============================================================================
 ;; My Commands
 ;; ============================================================================
@@ -341,3 +325,24 @@
     (other-window 1)
     (eshell)
     (other-window -1)))
+
+;; ============================================================================
+;; Key Bindings
+;; ============================================================================
+
+;; General
+(global-set-key (kbd "C-`") 'toggle-input-method)
+(global-set-key (kbd "M-`") 'toggle-input-method)
+(global-set-key (kbd "C-t") 'toggle-truncate-lines)
+(global-set-key (kbd "C-M-!") 'eshell)
+
+;; Window
+(global-set-key (kbd "<C-up>") 'shrink-window)
+(global-set-key (kbd "<C-down>") 'enlarge-window)
+(global-set-key (kbd "<C-left>") 'shrink-window-horizontally)
+(global-set-key (kbd "<C-right>") 'enlarge-window-horizontally)
+
+(global-set-key (kbd "<f5>") (lambda () (interactive) (other-window -1)))
+(global-set-key (kbd "<f6>") (lambda () (interactive) (other-window 1)))
+(global-set-key (kbd "<f7>") (lambda () (interactive) (delete-other-windows)))
+(global-set-key (kbd "<f8>") (lambda () (interactive) (delete-window)))
