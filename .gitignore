@@ -1,5 +1,6 @@
 *
 !.git*
 !/init.el.sample
+!/repos.el
 !/config.el
 !/LICENSE
