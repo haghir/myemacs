@@ -37,3 +37,6 @@
 (let ((config-el (expand-file-name "config.el" user-emacs-directory)))
   (when (file-exists-p config-el)
     (load-file config-el)))
+
+;; Stop creating backup files
+(setq make-backup-files nil)
