@@ -44,6 +44,9 @@
 (set-face-foreground 'whitespace-line nil)
 (set-face-background 'whitespace-line nil)
 
+;; Line Numbers.
+(global-display-line-numbers-mode 1)
+
 ;; ============================================================================
 ;; Packages
 ;; ============================================================================
